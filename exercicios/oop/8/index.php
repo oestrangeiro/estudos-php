@@ -13,21 +13,32 @@
 		c) Um método que verifique se duas pessoas são irmãs;
 
 		d) Um método que verifique se uma pessoa é antecessora da pessoa que recebeu a mensagem (é seu pai ou sua mãe, ou antecessor do pai ou antecessor da mãe).
-		
+
 	*/
 
 	require_once 'classes/Pessoa.php';
 
-	$p1 = new Pessoa('Mateus', 'Joelson', 'Luiza');
-	$p2 = new Pessoa('Maria', 'Carlos', 'Luiza');
+	// $p1 = new Pessoa('Mateus', 'Joelson', 'Luiza');
+	// $p2 = new Pessoa('Maria', 'Carlos', 'Luiza');
 
-	$status = Pessoa::mesmasPessoas($p1, $p2);
+	$p = new Pessoa('Mateus Almeida da Silva', 'Antonio José Pereira', 'Maria da Silva Almeida');
+
+	$p2 = new Pessoa('Mateus Torres Pereira', 'Antonio José', 'Marcia Torres da Costa');
+
+	$status = Pessoa::igualdadeSemeantica($p, $p2);
 
 	if(!$status){
-		echo "As pessoas {$p1->getName()} e {$p2->getName()} não sofrem de igualdade semântica!\n";
+		echo "As pessoas {$p->getName()} e {$p2->getName()} não sofrem de igualdade semântica!\n";
 	}else{
-		echo "As pessoas {$p1->getName()} e {$p2->getName()} sofrem de igualdade semântica!\n";	
+		echo "As pessoas {$p->getName()} e {$p2->getName()} sofrem de igualdade semântica!\n";	
 	}
 	
+	$saoIrmas = Pessoa::saoIrmas($p, $p2);
+
+	if(!$saoIrmas){
+		echo "As pessoas {$p->getName()} e {$p2->getName()} não são irmãs!\n";
+	}else{
+		echo "As pessoas {$p->getName()} e {$p2->getName()} são irmãs!\n";
+	}
 
 
