@@ -13,7 +13,7 @@
 		c) Um método que verifique se duas pessoas são irmãs;
 
 		d) Um método que verifique se uma pessoa é antecessora da pessoa que recebeu a mensagem (é seu pai ou sua mãe, ou antecessor do pai ou antecessor da mãe).
-
+		
 	*/
 
 	require_once 'classes/Pessoa.php';
